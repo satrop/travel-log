@@ -1,0 +1,63 @@
+:root {
+	--clr-n-100: hsl(0, 100%, 100%); // White
+	--clr-n-200: hsla(0, 0%, 96%, 1); // Light Gray
+	--clr-n-400: hsl(0, 0%, 75%); // Gray
+	--clr-n-800: hsl(0, 0%, 0%); // Black
+
+	--clr-p-100: hsla(0, 89%, 66%, 1); // Pink
+	--clr-p-200: hsla(254, 6%, 58%, 1); // Light Text
+	--clr-p-400: hsla(250, 18%, 19%, 1); // Text
+
+	--br-s: 0.3125rem; // 5
+	--br-l: 0.625rem; // 10
+
+	--fs-100: 0.9375rem; // 15
+	--fs-200: 1.25rem; // 20
+	--fs-200: 1.5625rem; // 25
+
+	--p-il: 2.5rem; // 40
+}
+
+body {
+	background-color: hsla(138, 25%, 90%, 1);
+	color: var(--clr-p-400);
+
+	&::before {
+		content: "";
+		position: fixed;
+		width: 150vh;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: hsla(147, 24%, 93%, 1);
+		left: 0;
+		transform: translateX(-80%);
+		z-index: -1;
+	}
+}
+
+.app {
+	padding-block: 3rem;
+	display: grid;
+	place-items: center;
+	width: min(80%, 700px);
+	margin-inline: auto;
+}
+
+.main {
+	background-color: var(--clr-n-100);
+	border-radius: var(--br-l);
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border: solid 1px var(--clr-n-400);
+	box-shadow: 0 0 0 10px var(--clr-n-100),
+		rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+@media (min-width: 750px) {
+	.app {
+		height: 100vh;
+		padding-block: 0;
+	}
+}
